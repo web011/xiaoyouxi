@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 最外层父元素 */
+        .container{
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+            border: 1px solid red;
+        }
+        /* 画布的容器 */
+        .allcanvas{
+            position: relative;
+            width: 800px;
+            height: 600px;
+            margin: 0;
+        }
+        /* 画布1  前*/
+        #canvas1{
+            position: absolute;
+            width: 800px;
+            height: 600px;
+            z-index: 1;
+            bottom: 0;
+            left: 0;
+            /* background-color: #00f; */
+        }
+        /* 画布2  后*/
+        #canvas2{
+            position: absolute;
+            width: 800px;
+            height: 600px;
+            z-index: 0;
+            bottom: 0;
+            left: 0;
+            /* background-color: #00f; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="allcanvas">
+            <!-- 前面的画布 大鱼 小鱼 分数-->
+            <canvas id="canvas1" width="800" height="600"></canvas>
+            <!-- 后面的画布 背景 海葵 食物-->
+            <canvas id="canvas2" width="800" height="600"></canvas>
+        </div>
+    </div>
+    <!-- 游戏入口程序，负责创建游戏中所有对象 -->
+    <!-- 并且负责调用不同的角色绘制方法 -->
+    <script src="js/main.js"></script>
+    <!-- 负责绘制大海背景 -->
+    <script src="js/background.js"></script>
+    <!-- 负责绘制海葵 -->
+    <script src="js/ane.js"></script>
+    <!-- 负责绘制食物 -->
+    <script src="js/fruit.js"></script>
+    <!-- 负责绘制大鱼 -->
+    <script src="js/mom.js"></script>
+    <!-- 负责各种函数计算,公共的公式文件 -->
+    <script src="js/commonFunctions.js"></script>
+    <!-- 负责游戏碰撞文件 -->
+    <script src="js/collsions.js"></script>
+    <!-- 负责游戏分数文件 -->
+    <script src="js/data.js"></script>
+    <!-- 负责大鱼吃到食物显示光环 -->
+    <script src="js/wave.js"></script>
+    <!-- 负责小鱼 -->
+    <script src="js/bady.js"></script>
+</body>
+</html>
